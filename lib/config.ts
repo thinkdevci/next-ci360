@@ -19,17 +19,17 @@ export const REMAINING_QUERY_ALERT_THRESHOLD = Infinity
 export const DAILY_FILE_UPLOAD_LIMIT = Infinity
 export const DAILY_LIMIT_PRO_MODELS = Infinity
 
-export const NON_AUTH_ALLOWED_MODELS = ["gpt-4.1-nano"]
+export const NON_AUTH_ALLOWED_MODELS = ["mistral-small-latest"]
 
 export const FREE_MODELS_IDS = [
   "openrouter:deepseek/deepseek-r1:free",
   "openrouter:meta-llama/llama-3.3-8b-instruct:free",
   "pixtral-large-latest",
   "mistral-large-latest",
-  "gpt-4.1-nano",
+  "mistral-small-latest",
 ]
 
-export const MODEL_DEFAULT = "gpt-4.1-nano"
+export const MODEL_DEFAULT = "mistral-small-latest"
 
 export const APP_NAME = "CI-360"
 export const APP_DOMAIN = "https://ci360.ci"
