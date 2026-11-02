@@ -6,7 +6,7 @@ Ce document explique l'intégration de l'API de données d'opportunités dans CI
 
 **Endpoint principal :** `https://koumoul.com/data-fair/api/v1/datasets/jcup6qw-fecborcepymjujpa/lines`
 
-**Clé API :** `bzpIQWJZUF8teEM6MmdxbmlyYVI5T3c4U2VxZGZwNjhU`
+**Clé API :** variable d'environnement `KOUMOUL_API_KEY` (ne jamais la commiter)
 
 ## 📊 Structure des Données
 
@@ -216,7 +216,7 @@ Ajoutez ces variables dans votre `.env.local` si nécessaire :
 ```bash
 # API Koumoul (optionnel - déjà configuré dans le code)
 KOUMOUL_API_URL=https://koumoul.com/data-fair/api/v1/datasets/jcup6qw-fecborcepymjujpa/lines
-KOUMOUL_API_KEY=bzpIQWJZUF8teEM6MmdxbmlyYVI5T3c4U2VxZGZwNjhU
+KOUMOUL_API_KEY=<votre_cle_koumoul>
 ```
 
 ### Personnalisation
@@ -268,7 +268,7 @@ console.log('Erreur API:', error)
 ```bash
 # Test direct de l'API
 curl -X GET "https://koumoul.com/data-fair/api/v1/datasets/jcup6qw-fecborcepymjujpa/lines" \
-  -H "x-apiKey: bzpIQWJZUF8teEM6MmdxbmlyYVI5T3c4U2VxZGZwNjhU"
+  -H "x-apiKey: <votre_cle_koumoul>"
 
 # Test de notre route API
 curl -X GET "http://localhost:3000/api/opportunities?type=Emploi"

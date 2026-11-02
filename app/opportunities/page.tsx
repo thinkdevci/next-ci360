@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { LayoutApp } from "@/app/components/layout/layout-app"
+import { MessagesProvider } from "@/lib/chat-store/messages/provider"
 import { OpportunitiesHero } from "@/app/components/opportunities/opportunities-hero"
 import { OpportunitiesStats } from "@/app/components/opportunities/opportunities-stats"
 
@@ -108,6 +109,7 @@ export default function OpportunitiesPage() {
   }
 
   return (
+    <MessagesProvider>
     <LayoutApp>
       <style jsx global>{`
         @keyframes fadeInUp {
@@ -290,5 +292,6 @@ export default function OpportunitiesPage() {
         </div>
       </footer>
     </LayoutApp>
+    </MessagesProvider>
   )
 } 

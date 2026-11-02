@@ -1,0 +1,20 @@
+# Pile CI-360 sur yira (https://ci360.yira.pro, Apache → 127.0.0.1:3022).
+# Sur le serveur : ~lolipop/ci360/{docker-compose.yml,.env,app.env}
+#   .env    : CI360_IMAGE=ci360:<tag>
+#   app.env : CSRF_SECRET, KOUMOUL_API_KEY, OPENAI_API_KEY (+ autres clés IA) — mode 600
+name: ci360
+
+services:
+  app:
+    image: ${CI360_IMAGE:?CI360_IMAGE manquant dans .env}
+    container_name: ci360-app
+    env_file: app.env
+    ports:
+      - "127.0.0.1:3022:3000"
+    restart: unless-stopped
+    mem_limit: 768m
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

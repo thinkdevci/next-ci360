@@ -1,8 +1,10 @@
 import { LayoutApp } from "@/app/components/layout/layout-app"
+import { MessagesProvider } from "@/lib/chat-store/messages/provider"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function ServicesPage() {
   return (
+    <MessagesProvider>
     <LayoutApp>
       <div className="container mx-auto py-8 px-4 pt-24">
         <div className="mb-8">
@@ -57,5 +59,6 @@ export default function ServicesPage() {
         </div>
       </div>
     </LayoutApp>
+    </MessagesProvider>
   )
 } 

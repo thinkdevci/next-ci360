@@ -26,7 +26,7 @@ export interface ApiResponse {
 
 class OpportunitiesApiService {
   private baseUrl = 'https://koumoul.com/data-fair/api/v1/datasets/jcup6qw-fecborcepymjujpa/lines'
-  private apiKey = 'bzpIQWJZUF8teEM6MmdxbmlyYVI5T3c4U2VxZGZwNjhU'
+  private apiKey = process.env.KOUMOUL_API_KEY ?? ''
 
   private async makeRequest(endpoint: string = '', params: Record<string, string> = {}): Promise<ApiResponse> {
     try {

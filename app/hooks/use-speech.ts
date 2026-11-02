@@ -92,6 +92,6 @@ export function useSpeech(options: UseSpeechOptions = {}) {
     isEnabled,
     voices,
     getFrenchVoice,
-    isSupported: 'speechSynthesis' in window
+    isSupported: typeof window !== 'undefined' && 'speechSynthesis' in window
   }
 } 
